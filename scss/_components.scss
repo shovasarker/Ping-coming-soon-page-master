@@ -1,0 +1,210 @@
+
+
+.container {
+    height: 100%;
+    padding: 85px 28px 36px 28px;
+    text-align: center;
+
+
+    @include breakpoint-up(medium){
+        height: 100%;
+        width: 600px;
+    }
+
+    @include breakpoint-up(large){
+        width: 640px;
+    }
+
+    &__logo {
+        img {
+            width: 54px;
+            
+            @include breakpoint-up(medium){
+                width: 86px;
+            }
+        }
+        margin-bottom: 40px;
+    }
+    
+
+    h1 {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: $Gray;
+        margin-bottom: 20px;
+
+        @include breakpoint-up(medium){
+            font-size: 40px;
+        }
+        span {
+            font-weight: 700;
+            color: $VeryDarkBlue;
+        }
+    }
+
+    > p {
+        font-size: 12px;
+        font-weight: 400;
+        //opacity: 0.9;
+        color: $VeryDarkBlue;
+        margin-bottom: 30px;
+        @include breakpoint-up(medium){
+            font-size: 20px;
+        }
+
+    }
+
+
+    &__input-holder {
+        padding: 0 1rem;
+        margin-bottom: 70px;
+
+        @include breakpoint-up(medium){
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            margin-bottom: 84px;
+        }
+        &.error {
+            .container__input::before {
+                display: inline-block;
+            }
+            input {
+                border-color: $LightRed;
+            }
+
+            @include breakpoint-down(small) {
+                margin-bottom: 40px;
+
+                .container__input {
+                    margin-bottom: 40px;
+                }
+            }
+
+        }
+    }
+
+    &__input {
+        position: relative;
+        margin-bottom: 10px;        
+        @include breakpoint-up(medium){
+            flex: 2;
+            margin-bottom: 0;
+            margin-right: 18px;
+        }
+
+
+        &::before {
+            content: "Please provide a valid email address";
+            font-size: 11px;
+            color: $LightRed;
+            font-style: italic;
+            position: absolute;
+            width: 100%;
+            bottom: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+
+            @include breakpoint-up(medium){
+                text-align: left;
+                padding-left: 2rem;
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 2rem;
+            font-size: 12px;
+            color: $VeryDarkBlue;
+            font-weight: 400;
+            font-family: 'Libre Franklin', sans-serif;
+            border: 1px solid $PaleBlue;
+            border-radius: 9999px;
+            @include breakpoint-up(medium){
+                font-size: 18px;
+                line-height: 18px;
+                padding: 16.5px 2rem;
+            }
+            &::placeholder {
+                color: $PaleBlue;   
+                font-weight: 400;        
+                @include breakpoint-up(medium){
+                    font-size: 18px;
+                    line-height: 18px;
+                }
+            }
+        }
+
+
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 12px;
+        font-family: 'Libre Franklin', sans-serif;
+        padding: 14px 2rem;
+        color: white;
+        background-color: $Blue;
+        border: none;
+        border-radius: 9999px;
+        box-shadow: 0 8px 15px 0 rgba($color: #000000, $alpha: 0.15);
+        cursor: pointer;
+        @include breakpoint-up(medium){
+            flex: 0.8;
+            font-size: 18px;
+            line-height: 18px;
+            padding: 19px 2rem;
+        }
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    &__image {
+        margin-bottom: 110px;
+        position: relative;
+
+        @include breakpoint-up(medium){
+            margin-bottom: 65px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+
+    &__social-icons {
+        margin-bottom: 30px;
+        i {
+            width: 30px;
+            height: 30px;
+            font-size: 15px;
+            line-height: 30px;
+            color: $Blue;
+            border: 1px solid $PaleBlue;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+
+            &:hover {
+                background-color: $Blue;
+                color: white;
+            }
+        }
+    }
+
+    &__copyright {
+        margin-bottom: 30px;
+        font-size: 12px;
+        color: $Gray;
+    }
+
+}
